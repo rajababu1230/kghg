@@ -1,0 +1,289 @@
+{
+  "id": "/subscriptions/c993a3b1-4130-4bb3-9c36-42d644d65856/resourceGroups/learn-26e2456a-cd4e-47eb-be9f-9218edbcc5c1/providers/Microsoft.Resources/deployments/CreateVm-MicrosoftWindowsServer.WindowsServer-202-20240824224418",
+  "name": "CreateVm-MicrosoftWindowsServer.WindowsServer-202-20240824224418",
+  "type": "Microsoft.Resources/deployments",
+  "tags": {
+    "primaryResourceId": "/subscriptions/c993a3b1-4130-4bb3-9c36-42d644d65856/resourcegroups/learn-26e2456a-cd4e-47eb-be9f-9218edbcc5c1/providers/Microsoft.Compute/virtualMachines/banned",
+    "marketplaceItemId": "Microsoft.VirtualMachine-ARM",
+    "provisioningHash": "SolutionProvider"
+  },
+  "properties": {
+    "templateHash": "6142222263201977240",
+    "parameters": {
+      "location": {
+        "type": "String",
+        "value": "southindia"
+      },
+      "networkInterfaceName": {
+        "type": "String",
+        "value": "banned897"
+      },
+      "enableAcceleratedNetworking": {
+        "type": "Bool",
+        "value": true
+      },
+      "networkSecurityGroupName": {
+        "type": "String",
+        "value": "banned-nsg"
+      },
+      "networkSecurityGroupRules": {
+        "type": "Array",
+        "value": [
+          {
+            "name": "RDP",
+            "properties": {
+              "priority": 300,
+              "protocol": "TCP",
+              "access": "Allow",
+              "direction": "Inbound",
+              "sourceAddressPrefix": "*",
+              "sourcePortRange": "*",
+              "destinationAddressPrefix": "*",
+              "destinationPortRange": "3389"
+            }
+          },
+          {
+            "name": "HTTP",
+            "properties": {
+              "priority": 320,
+              "protocol": "TCP",
+              "access": "Allow",
+              "direction": "Inbound",
+              "sourceAddressPrefix": "*",
+              "sourcePortRange": "*",
+              "destinationAddressPrefix": "*",
+              "destinationPortRange": "80"
+            }
+          },
+          {
+            "name": "HTTPS",
+            "properties": {
+              "priority": 340,
+              "protocol": "TCP",
+              "access": "Allow",
+              "direction": "Inbound",
+              "sourceAddressPrefix": "*",
+              "sourcePortRange": "*",
+              "destinationAddressPrefix": "*",
+              "destinationPortRange": "443"
+            }
+          }
+        ]
+      },
+      "subnetName": {
+        "type": "String",
+        "value": "default"
+      },
+      "virtualNetworkName": {
+        "type": "String",
+        "value": "banned-vnet"
+      },
+      "addressPrefixes": {
+        "type": "Array",
+        "value": [
+          "10.0.0.0/16"
+        ]
+      },
+      "subnets": {
+        "type": "Array",
+        "value": [
+          {
+            "name": "default",
+            "properties": {
+              "addressPrefix": "10.0.0.0/24"
+            }
+          }
+        ]
+      },
+      "publicIpAddressName": {
+        "type": "String",
+        "value": "banned-ip"
+      },
+      "publicIpAddressType": {
+        "type": "String",
+        "value": "Static"
+      },
+      "publicIpAddressSku": {
+        "type": "String",
+        "value": "Standard"
+      },
+      "pipDeleteOption": {
+        "type": "String",
+        "value": "Detach"
+      },
+      "virtualMachineName": {
+        "type": "String",
+        "value": "banned"
+      },
+      "virtualMachineComputerName": {
+        "type": "String",
+        "value": "banned"
+      },
+      "virtualMachineRG": {
+        "type": "String",
+        "value": "learn-26e2456a-cd4e-47eb-be9f-9218edbcc5c1"
+      },
+      "osDiskType": {
+        "type": "String",
+        "value": "Premium_LRS"
+      },
+      "osDiskDeleteOption": {
+        "type": "String",
+        "value": "Delete"
+      },
+      "virtualMachineSize": {
+        "type": "String",
+        "value": "Standard_D2s_v3"
+      },
+      "nicDeleteOption": {
+        "type": "String",
+        "value": "Detach"
+      },
+      "hibernationEnabled": {
+        "type": "Bool",
+        "value": false
+      },
+      "adminUsername": {
+        "type": "String",
+        "value": "administrator1"
+      },
+      "adminPassword": {
+        "type": "SecureString"
+      },
+      "patchMode": {
+        "type": "String",
+        "value": "AutomaticByPlatform"
+      },
+      "enableHotpatching": {
+        "type": "Bool",
+        "value": true
+      },
+      "rebootSetting": {
+        "type": "String",
+        "value": "IfRequired"
+      },
+      "securityType": {
+        "type": "String",
+        "value": "TrustedLaunch"
+      },
+      "secureBoot": {
+        "type": "Bool",
+        "value": true
+      },
+      "vTPM": {
+        "type": "Bool",
+        "value": true
+      }
+    },
+    "mode": "Incremental",
+    "debugSetting": {
+      "detailLevel": "None"
+    },
+    "provisioningState": "Succeeded",
+    "timestamp": "2024-08-24T17:20:08.6858625Z",
+    "duration": "PT1M50.0821565S",
+    "correlationId": "fef2b812-ddf6-47c5-a3ce-c5214cc58864",
+    "providers": [
+      {
+        "namespace": "Microsoft.Network",
+        "resourceTypes": [
+          {
+            "resourceType": "networkInterfaces",
+            "locations": [
+              "southindia"
+            ]
+          },
+          {
+            "resourceType": "networkSecurityGroups",
+            "locations": [
+              "southindia"
+            ]
+          },
+          {
+            "resourceType": "virtualNetworks",
+            "locations": [
+              "southindia"
+            ]
+          },
+          {
+            "resourceType": "publicIpAddresses",
+            "locations": [
+              "southindia"
+            ]
+          }
+        ]
+      },
+      {
+        "namespace": "Microsoft.Compute",
+        "resourceTypes": [
+          {
+            "resourceType": "virtualMachines",
+            "locations": [
+              "southindia"
+            ]
+          }
+        ]
+      }
+    ],
+    "dependencies": [
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/c993a3b1-4130-4bb3-9c36-42d644d65856/resourceGroups/learn-26e2456a-cd4e-47eb-be9f-9218edbcc5c1/providers/Microsoft.Network/networkSecurityGroups/banned-nsg",
+            "resourceType": "Microsoft.Network/networkSecurityGroups",
+            "resourceName": "banned-nsg"
+          },
+          {
+            "id": "/subscriptions/c993a3b1-4130-4bb3-9c36-42d644d65856/resourceGroups/learn-26e2456a-cd4e-47eb-be9f-9218edbcc5c1/providers/Microsoft.Network/virtualNetworks/banned-vnet",
+            "resourceType": "Microsoft.Network/virtualNetworks",
+            "resourceName": "banned-vnet"
+          },
+          {
+            "id": "/subscriptions/c993a3b1-4130-4bb3-9c36-42d644d65856/resourceGroups/learn-26e2456a-cd4e-47eb-be9f-9218edbcc5c1/providers/Microsoft.Network/publicIpAddresses/banned-ip",
+            "resourceType": "Microsoft.Network/publicIpAddresses",
+            "resourceName": "banned-ip"
+          }
+        ],
+        "id": "/subscriptions/c993a3b1-4130-4bb3-9c36-42d644d65856/resourceGroups/learn-26e2456a-cd4e-47eb-be9f-9218edbcc5c1/providers/Microsoft.Network/networkInterfaces/banned897",
+        "resourceType": "Microsoft.Network/networkInterfaces",
+        "resourceName": "banned897"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/c993a3b1-4130-4bb3-9c36-42d644d65856/resourceGroups/learn-26e2456a-cd4e-47eb-be9f-9218edbcc5c1/providers/Microsoft.Network/networkInterfaces/banned897",
+            "resourceType": "Microsoft.Network/networkInterfaces",
+            "resourceName": "banned897"
+          }
+        ],
+        "id": "/subscriptions/c993a3b1-4130-4bb3-9c36-42d644d65856/resourceGroups/learn-26e2456a-cd4e-47eb-be9f-9218edbcc5c1/providers/Microsoft.Compute/virtualMachines/banned",
+        "resourceType": "Microsoft.Compute/virtualMachines",
+        "resourceName": "banned"
+      }
+    ],
+    "outputs": {
+      "adminUsername": {
+        "type": "String",
+        "value": "administrator1"
+      }
+    },
+    "outputResources": [
+      {
+        "id": "/subscriptions/c993a3b1-4130-4bb3-9c36-42d644d65856/resourceGroups/learn-26e2456a-cd4e-47eb-be9f-9218edbcc5c1/providers/Microsoft.Compute/virtualMachines/banned"
+      },
+      {
+        "id": "/subscriptions/c993a3b1-4130-4bb3-9c36-42d644d65856/resourceGroups/learn-26e2456a-cd4e-47eb-be9f-9218edbcc5c1/providers/Microsoft.Network/networkInterfaces/banned897"
+      },
+      {
+        "id": "/subscriptions/c993a3b1-4130-4bb3-9c36-42d644d65856/resourceGroups/learn-26e2456a-cd4e-47eb-be9f-9218edbcc5c1/providers/Microsoft.Network/networkSecurityGroups/banned-nsg"
+      },
+      {
+        "id": "/subscriptions/c993a3b1-4130-4bb3-9c36-42d644d65856/resourceGroups/learn-26e2456a-cd4e-47eb-be9f-9218edbcc5c1/providers/Microsoft.Network/publicIpAddresses/banned-ip"
+      },
+      {
+        "id": "/subscriptions/c993a3b1-4130-4bb3-9c36-42d644d65856/resourceGroups/learn-26e2456a-cd4e-47eb-be9f-9218edbcc5c1/providers/Microsoft.Network/virtualNetworks/banned-vnet"
+      }
+    ],
+    "validationLevel": "Template"
+  }
+}
